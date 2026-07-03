@@ -3,152 +3,135 @@ import Section from "@/components/ui/section";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, Target, Award, Lightbulb } from "lucide-react";
 
 const About = () => {
   const values = [
+    { title: "Leadership", desc: "Inspire through action, not direction." },
+    { title: "Collaboration", desc: "Leverage collective genius." },
+    { title: "Integrity", desc: "Be real." },
+    { title: "Accountability", desc: "If it is to be, it's up to me." },
+    { title: "Passion", desc: "Committed in heart and mind." },
+    { title: "Diversity", desc: "As inclusive as our brands." },
+    { title: "Quality", desc: "What we do, we do well." },
+  ];
+
+  const testimonials = [
     {
-      icon: Users,
-      title: "Team Extension",
-      description: "We become an integral part of your team, understanding your goals and working towards them as if they were our own."
+      quote: "UDM has been providing Managed Services on the AWS Cloud platform for desiredesire.com for more than a year. They have proactively solved issues impacting the business and handled the continuous releases of the applications without downtime.",
+      name: "Praveen Krishnaiah",
+      role: "Founder, Handpick 3d Solution Pvt Ltd",
     },
     {
-      icon: Target,
-      title: "Goal-Oriented",
-      description: "Every project is approached with clear objectives and measurable outcomes to ensure maximum value delivery."
+      quote: "We are very satisfied with our relationship with UDM Global. They are professionals, hard workers and they help us to achieve any new idea that we come up with for our product. Thank you for your outstanding support and flexibility over the years.",
+      name: "Rouette Jean-Sebastien",
+      role: "Manager, Software Development & Support, Technicolor Montreal Canada",
     },
     {
-      icon: Award,
-      title: "Quality First",
-      description: "We maintain the highest standards in everything we do, from code quality to client communication."
+      quote: "I am very impressed by the quality of the team working on our project. The code is top quality and the team displays a real understanding of our issues, coming to the table with suggestions and ideas that are very impressive. If I had to do it all over again, I would select UDM as our outsourcing provider again.",
+      name: "Pankaj Singh",
+      role: "CTO, Engagedly Software Solutions Pvt Ltd",
     },
-    {
-      icon: Lightbulb,
-      title: "Innovation",
-      description: "We stay ahead of technology trends to provide cutting-edge solutions that give you a competitive advantage."
-    }
   ];
 
   return (
     <div className="min-h-screen">
       <Navigation />
-      
-      {/* Hero Section */}
+
       <Section padding="xl" className="pt-32">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-udm-navy mb-6">
-            About <span className="text-primary">UDM Global</span>
-          </h1>
-          <p className="text-xl text-udm-gray leading-relaxed">
-            We're an independent design & development company based out of Bangalore, India, 
-            committed to building long-term relationships with our clients.
-          </p>
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-semibold text-udm-navy mb-4 tracking-tight">About Us</h1>
+          <p className="text-lg text-udm-gray">Get to know us a little.</p>
         </div>
       </Section>
 
-      {/* Mission Section */}
       <Section background="gray" padding="xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-udm-navy mb-6">
-              Our Mission
-            </h2>
-            <p className="text-lg text-udm-gray leading-relaxed mb-6">
-              At UDM Global, we believe in the power of technology to transform businesses. 
-              Our mission is to provide world-class software development and design services 
-              that help our clients achieve their goals and stay ahead in the digital landscape.
+        <div className="max-w-4xl mx-auto space-y-6 text-udm-gray leading-relaxed">
+          <p>
+            UDM Global Solution is an Information Technology company, based out of Bangalore, India. Founded in April 2017,
+            we already have 6 satisfied customers from around the world.
+          </p>
+          <p>
+            Our team has years of experience in several key domains such as Healthcare, Media and Entertainment, Mortgage
+            and Lending, eLearning, Supply Chain Management and e-Commerce. We are a mix of individuals who bring both the
+            energy and out-of-the-box thinking of young go-getters and the depth of knowledge and caution of seasoned
+            professionals, and together produce the best possible solutions customized to each client's needs.
+          </p>
+          <p>
+            As a group we are extremely passionate about what we do and we are committed to the success of our clients.
+          </p>
+        </div>
+      </Section>
+
+      <Section padding="xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="p-8 border rounded-md bg-white shadow-[var(--shadow-card)]">
+            <h3 className="text-xl font-semibold text-udm-navy mb-3">Our Mission</h3>
+            <p className="text-udm-gray leading-relaxed">
+              Strive to astound every customer by exceeding their tangible aspiration and making their success our mission,
+              orchestrated by an obsessive, committed and dependable team, great customer experiences and services.
             </p>
-            <p className="text-lg text-udm-gray leading-relaxed mb-8">
-              We don't just deliver projects; we build partnerships. We're in it for the long haul, 
-              committed to your success every step of the way.
-            </p>
-            <Link to="/contact">
-              <Button size="lg" className="px-8">
-                Work With Us
-              </Button>
-            </Link>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-[var(--shadow-card)]">
-            <blockquote className="text-xl italic text-udm-navy mb-4">
-              "We want to build a relationship, not just a customer base."
-            </blockquote>
-            <cite className="text-udm-gray">— UDM Global Philosophy</cite>
+          <div className="p-8 border rounded-md bg-white shadow-[var(--shadow-card)]">
+            <h3 className="text-xl font-semibold text-udm-navy mb-3">Our Vision</h3>
+            <p className="text-udm-gray leading-relaxed">
+              To become the global benchmark for customer delight.
+            </p>
           </div>
         </div>
       </Section>
 
-      {/* Values Section */}
+      <Section background="gray" padding="xl">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-semibold text-udm-navy text-center mb-10">Our Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {values.map((v, i) => (
+              <div key={i} className="p-6 bg-white border rounded-md">
+                <div className="text-primary text-sm font-semibold mb-2">0{i + 1}</div>
+                <h4 className="font-semibold text-udm-navy mb-1">{v.title}</h4>
+                <p className="text-sm text-udm-gray">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       <Section padding="xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-udm-navy mb-4">
-            Our Core Values
-          </h2>
-          <p className="text-xl text-udm-gray max-w-2xl mx-auto">
-            These values guide everything we do and shape how we work with our clients.
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-udm-navy mb-4">Fantastic Team</h2>
+          <p className="text-udm-gray leading-relaxed">
+            Every project we have completed so far came to us with a set of challenges, including seemingly impossible
+            deadlines. Each time, our teams have risen to the challenge, and gone above and beyond their call of duty to
+            deliver results that not just met but exceeded client expectations. The team's USP is their cusp of creativity
+            and problem solving abilities, which help identify potential roadblocks and find creative solutions for them.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((value, index) => (
-            <div 
-              key={index}
-              className="text-center bg-white p-8 rounded-2xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-orange)] transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-udm-orange-light rounded-full flex items-center justify-center mx-auto mb-6">
-                <value.icon className="h-8 w-8 text-primary" />
+      </Section>
+
+      <Section background="navy" padding="xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-semibold text-white mb-3">This is why we love what we do</h2>
+          <p className="text-white/70">Kind words from our clients</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-white/5 border border-white/10 rounded-md p-6">
+              <p className="text-white/85 text-sm leading-relaxed mb-5 italic">"{t.quote}"</p>
+              <div>
+                <div className="font-semibold text-white">{t.name}</div>
+                <div className="text-xs text-white/60 mt-1">{t.role}</div>
               </div>
-              <h3 className="text-xl font-bold text-udm-navy mb-4">{value.title}</h3>
-              <p className="text-udm-gray leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* Team Section */}
-      <Section background="navy" padding="xl">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Why Choose UDM Global?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">50+</div>
-              <div className="text-white">Projects Delivered</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">5+</div>
-              <div className="text-white">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">98%</div>
-              <div className="text-white">Client Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* CTA Section */}
-      <Section padding="xl" className="text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-udm-navy mb-6">
-            Ready to Work Together?
-          </h2>
-          <p className="text-xl text-udm-gray mb-8">
-            Let's discuss how we can help bring your vision to life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="px-8 py-6 text-lg">
-                Get Started
-              </Button>
-            </Link>
-            <Link to="/services">
-              <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
-                View Services
-              </Button>
-            </Link>
-          </div>
-        </div>
+      <Section padding="lg" className="text-center">
+        <p className="text-udm-gray mb-6">
+          Email Us: <a href="mailto:contact@udmglobal.com" className="text-primary font-medium">contact@udmglobal.com</a>
+          {"  or  "}
+          Call us @ <a href="tel:+918043009165" className="text-primary font-medium">+91 80-43009165</a>
+        </p>
+        <Link to="/contact"><Button size="lg">Get In Touch</Button></Link>
       </Section>
 
       <Footer />
