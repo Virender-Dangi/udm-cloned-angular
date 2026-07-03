@@ -1,178 +1,112 @@
 import Navigation from "@/components/Navigation";
 import Section from "@/components/ui/section";
-import ServiceCard from "@/components/ServiceCard";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { 
-  Code, 
-  Palette, 
-  Users, 
-  Shield, 
-  MessageCircle, 
-  Zap,
-  Globe,
-  Smartphone
-} from "lucide-react";
-import developmentImage from "@/assets/development-workspace.jpg";
-import designImage from "@/assets/design-mockups.jpg";
+import { Code2, Users, Wrench, Palette, ShieldCheck, Share2 } from "lucide-react";
+
+const services = [
+  {
+    icon: Code2,
+    title: "Development",
+    description:
+      "As a specialized offshore software development company, we design and develop custom applications to effectively meet our customers' needs. Our expert technical team is skilled in Microsoft Technologies, Cloud Computing and Hosting, Web Services and Micro Programming, and Media Encoding, with deep understanding of Healthcare, Media & Entertainment, Mortgage & Lending, eLearning, Supply Chain Management and eCommerce. We work on the Agile Scrum model, delivering high quality, innovative and cost-effective solutions.",
+  },
+  {
+    icon: Users,
+    title: "Recruitment Process Outsourcing",
+    description:
+      "As a recruitment partner, UDM provides customized recruitment solutions for both permanent and temporary positions. From scouting and screening potential hires all the way to on-boarding, our experienced recruitment team takes care of every function of the process. We help lower your costs and time-to-hire, and find you quality candidates who best fit your requirements.",
+  },
+  {
+    icon: Wrench,
+    title: "Maintenance",
+    description:
+      "Timely maintenance of business applications is as important as a good design or efficient code — whether it is to rectify errors, incorporate new features, improve performance or adapt to technological advancements. Our experienced service team is fully equipped to help businesses with corrective or adaptive maintenance, with a keen focus on improved efficiency and minimal downtime.",
+  },
+  {
+    icon: Palette,
+    title: "UI Development",
+    description:
+      "We have a creative and highly skilled team that specialises in delivering outstanding user experience for Web and Mobile apps. Our UX designers help reconcile client goals with user expectations with equal emphasis on intuitive layout and functionality. Our UI designers produce interfaces that are visually appealing while being functionally consistent and powerful.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Testing",
+    description:
+      "Businesses depend on applications for almost all crucial functions of their day-to-day operations. Ensuring these applications perform flawlessly is critical. Our Quality Assurance (QA) team uses best-in-industry testing methods and QA processes to find risk areas before they become threats. We are equipped to handle all kinds of testing processes.",
+  },
+  {
+    icon: Share2,
+    title: "Content Creation & Social Media Management",
+    description:
+      "Reaching new customers, connecting with existing ones, understanding customer preferences, addressing grievances, keeping an eye on competitors and monitoring mentions — all require an efficiently managed social media presence. Our team handles brand communications, social media marketing, social strategy planning, content creation, email marketing, advertising and marketing automation.",
+  },
+];
+
+const valueAdds = [
+  {
+    title: "Agile Development Methodology",
+    text: "All our dev work follows Agile-Scrum methodology ensuring quick and continuous delivery of working software, collaborated effort between business and tech experts, and room to adapt to changes while maintaining highest attention to design and quality.",
+  },
+  {
+    title: "No Shared Resources",
+    text: "We never allocate one developer to more than one project, irrespective of the workload. Our team members are dedicated to the customer and project they are assigned to at all times.",
+  },
+  {
+    title: "Customisable Billing",
+    text: "Our customer base ranges from start-ups to MNCs across varied domains. Their requirements, involvement and budgets differ, so we customise our billing to each customer to give the best value for money.",
+  },
+];
 
 const Services = () => {
-  const mainServices = [
-    {
-      title: "Off-Shore Software Development",
-      description: "Custom applications across domains and technologies. We build scalable, robust solutions tailored to your business needs.",
-      image: developmentImage,
-    },
-    {
-      title: "Design & User Experience (UI/UX)",
-      description: "Web and Mobile applications that users love. Creating intuitive interfaces that drive engagement and conversions.",
-      image: designImage,
-    },
-    {
-      title: "Recruitment & Brand Identity",
-      description: "Let our RPO team find you the best talent for you. We help build strong teams and establish compelling brand presence.",
-      image: developmentImage,
-    },
-    {
-      title: "Quality Assurance & Testing",
-      description: "Fault free applications and unmatched user experience. Comprehensive testing to ensure reliability and performance.",
-      image: designImage,
-    },
-    {
-      title: "Content Creation & Social Management",
-      description: "Custom Social Media strategies to meet business objectives. Engaging content that builds communities and drives growth.",
-      image: developmentImage,
-    },
-  ];
-
-  const technologies = [
-    { icon: Code, name: "Full-Stack Development", description: "React, Node.js, Python, Java" },
-    { icon: Smartphone, name: "Mobile Development", description: "React Native, Flutter, iOS, Android" },
-    { icon: Globe, name: "Web Technologies", description: "Modern frameworks and cloud solutions" },
-    { icon: Palette, name: "Design Tools", description: "Figma, Adobe Creative Suite, Sketch" },
-    { icon: Shield, name: "Security & DevOps", description: "AWS, Docker, CI/CD, Security audits" },
-    { icon: Zap, name: "Performance", description: "Optimization, monitoring, analytics" },
-  ];
-
   return (
     <div className="min-h-screen">
       <Navigation />
-      
-      {/* Hero Section */}
+
       <Section padding="xl" className="pt-32">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-udm-navy mb-6">
-            Our <span className="text-primary">Services</span>
-          </h1>
-          <p className="text-xl text-udm-gray leading-relaxed">
-            Comprehensive technology solutions designed to accelerate your business growth 
-            and digital transformation journey.
-          </p>
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-semibold text-udm-navy mb-4 tracking-tight">Services</h1>
+          <p className="text-lg text-udm-gray">Here's what we do best.</p>
         </div>
       </Section>
 
-      {/* Main Services */}
       <Section background="gray" padding="xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-udm-navy mb-4">
-            What We Offer
-          </h2>
-          <p className="text-xl text-udm-gray max-w-2xl mx-auto">
-            End-to-end solutions that cover every aspect of your digital needs.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mainServices.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              image={service.image}
-              className="animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` } as React.CSSProperties}
-            />
-          ))}
-        </div>
-      </Section>
-
-      {/* Technologies */}
-      <Section padding="xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-udm-navy mb-4">
-            Technologies We Use
-          </h2>
-          <p className="text-xl text-udm-gray max-w-2xl mx-auto">
-            We stay current with the latest technologies to deliver cutting-edge solutions.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {technologies.map((tech, index) => (
-            <div 
-              key={index}
-              className="text-center bg-white p-8 rounded-2xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-orange)] transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-udm-orange-light rounded-full flex items-center justify-center mx-auto mb-6">
-                <tech.icon className="h-8 w-8 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {services.map((s, i) => (
+            <div key={i} className="bg-white border rounded-md p-7 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-shadow">
+              <div className="w-11 h-11 bg-udm-orange-light rounded-md flex items-center justify-center mb-4">
+                <s.icon className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-udm-navy mb-4">{tech.name}</h3>
-              <p className="text-udm-gray leading-relaxed">{tech.description}</p>
+              <h3 className="text-lg font-semibold text-udm-navy mb-3">{s.title}</h3>
+              <p className="text-sm text-udm-gray leading-relaxed">{s.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* Process Section */}
-      <Section background="navy" padding="xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Our Process
-          </h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            A proven methodology that ensures project success from conception to delivery.
-          </p>
+      <Section padding="xl">
+        <div className="text-center mb-3">
+          <p className="text-primary text-sm font-medium uppercase tracking-widest mb-2">Knowledge, experience, fresh and good ideas</p>
+          <h2 className="text-3xl font-semibold text-udm-navy">Value Add Services</h2>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {[
-            { step: "01", title: "Discovery", description: "Understanding your needs and goals" },
-            { step: "02", title: "Planning", description: "Strategic roadmap and architecture" },
-            { step: "03", title: "Development", description: "Agile development with regular updates" },
-            { step: "04", title: "Delivery", description: "Testing, deployment, and ongoing support" },
-          ].map((phase, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl font-bold text-primary mb-4">{phase.step}</div>
-              <h3 className="text-xl font-bold text-white mb-3">{phase.title}</h3>
-              <p className="text-white/80">{phase.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-10">
+          {valueAdds.map((v, i) => (
+            <div key={i} className="p-6 border-t-2 border-primary bg-udm-gray-light rounded-b-md">
+              <h4 className="font-semibold text-udm-navy mb-3">{v.title}</h4>
+              <p className="text-sm text-udm-gray leading-relaxed">{v.text}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* CTA Section */}
-      <Section padding="xl" className="text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-udm-navy mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-udm-gray mb-8">
-            Let's discuss your project requirements and create a custom solution for your business.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="px-8 py-6 text-lg">
-                Start Your Project
-              </Button>
-            </Link>
-            <Link to="/about">
-              <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
-                Learn About Us
-              </Button>
-            </Link>
-          </div>
-        </div>
+      <Section background="navy" padding="lg" className="text-center">
+        <p className="text-white/85 mb-5">
+          Email Us: <a href="mailto:contact@udmglobal.com" className="text-primary font-medium">contact@udmglobal.com</a>
+          {"  or  "}
+          Call us @ <a href="tel:+918043009165" className="text-primary font-medium">+91 80-43009165</a>
+        </p>
+        <Link to="/contact"><Button size="lg">Start a Project</Button></Link>
       </Section>
 
       <Footer />

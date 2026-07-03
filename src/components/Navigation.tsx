@@ -23,8 +23,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold">
-              <span className="text-primary">udm</span>
+            <span className="text-xl font-semibold tracking-tight">
+              <span className="text-primary">UDM</span>
               <span className="text-udm-navy"> Global Solution</span>
             </span>
           </Link>
