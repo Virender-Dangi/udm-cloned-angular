@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Section from "@/components/ui/section";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -15,65 +15,55 @@ const About = () => {
     { title: "Quality", desc: "What we do, we do well." },
   ];
 
-  const testimonials = [
-    {
-      quote: "UDM has been providing Managed Services on the AWS Cloud platform for desiredesire.com for more than a year. They have proactively solved issues impacting the business and handled the continuous releases of the applications without downtime.",
-      name: "Praveen Krishnaiah",
-      role: "Founder, Handpick 3d Solution Pvt Ltd",
-    },
-    {
-      quote: "We are very satisfied with our relationship with UDM Global. They are professionals, hard workers and they help us to achieve any new idea that we come up with for our product. Thank you for your outstanding support and flexibility over the years.",
-      name: "Rouette Jean-Sebastien",
-      role: "Manager, Software Development & Support, Technicolor Montreal Canada",
-    },
-    {
-      quote: "I am very impressed by the quality of the team working on our project. The code is top quality and the team displays a real understanding of our issues, coming to the table with suggestions and ideas that are very impressive. If I had to do it all over again, I would select UDM as our outsourcing provider again.",
-      name: "Pankaj Singh",
-      role: "CTO, Engagedly Software Solutions Pvt Ltd",
-    },
+  const outcomes = [
+    "Improved scalability and responsiveness",
+    "Enhanced platform stability and reliability",
+    "Cloud-ready, future-proof architecture",
+    "Better infrastructure efficiency",
+    "Stronger foundation for product innovation",
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
 
-      <Section padding="xl" className="pt-32">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-semibold text-udm-navy mb-4 tracking-tight">About Us</h1>
-          <p className="text-lg text-udm-gray">Get to know us a little.</p>
-        </div>
+      <Section padding="xl" className="pt-32 text-center">
+        <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">About</p>
+        <h1 className="text-5xl md:text-7xl font-semibold leading-[1.05] mb-6">
+          We're in it for
+          <br />
+          <span className="text-muted-foreground">the long haul.</span>
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light">
+          An Information Technology company based in Bengaluru, India. Founded April 2017.
+        </p>
       </Section>
 
       <Section background="gray" padding="xl">
-        <div className="max-w-4xl mx-auto space-y-6 text-udm-gray leading-relaxed">
+        <div className="max-w-3xl mx-auto space-y-6 text-lg text-foreground/80 leading-relaxed font-light">
           <p>
-            UDM Global Solution is an Information Technology company, based out of Bangalore, India. Founded in April 2017,
-            we already have 6 satisfied customers from around the world.
+            Our team has years of experience across Healthcare, Media & Entertainment, Mortgage & Lending, eLearning,
+            Supply Chain Management and e-Commerce.
           </p>
           <p>
-            Our team has years of experience in several key domains such as Healthcare, Media and Entertainment, Mortgage
-            and Lending, eLearning, Supply Chain Management and e-Commerce. We are a mix of individuals who bring both the
-            energy and out-of-the-box thinking of young go-getters and the depth of knowledge and caution of seasoned
-            professionals, and together produce the best possible solutions customized to each client's needs.
-          </p>
-          <p>
-            As a group we are extremely passionate about what we do and we are committed to the success of our clients.
+            We're a mix of young go-getters and seasoned professionals who together produce solutions customised
+            to each client's needs — passionate about what we do and committed to our clients' success.
           </p>
         </div>
       </Section>
 
       <Section padding="xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="p-8 border rounded-md bg-white shadow-[var(--shadow-card)]">
-            <h3 className="text-xl font-semibold text-udm-navy mb-3">Our Mission</h3>
-            <p className="text-udm-gray leading-relaxed">
-              Strive to astound every customer by exceeding their tangible aspiration and making their success our mission,
-              orchestrated by an obsessive, committed and dependable team, great customer experiences and services.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          <div className="bg-secondary rounded-3xl p-10">
+            <h3 className="text-2xl font-semibold mb-3">Our Mission</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Astound every customer by exceeding their tangible aspirations and making their success our mission —
+              orchestrated by an obsessive, committed and dependable team.
             </p>
           </div>
-          <div className="p-8 border rounded-md bg-white shadow-[var(--shadow-card)]">
-            <h3 className="text-xl font-semibold text-udm-navy mb-3">Our Vision</h3>
-            <p className="text-udm-gray leading-relaxed">
+          <div className="bg-secondary rounded-3xl p-10">
+            <h3 className="text-2xl font-semibold mb-3">Our Vision</h3>
+            <p className="text-muted-foreground leading-relaxed">
               To become the global benchmark for customer delight.
             </p>
           </div>
@@ -81,57 +71,69 @@ const About = () => {
       </Section>
 
       <Section background="gray" padding="xl">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold text-udm-navy text-center mb-10">Our Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {values.map((v, i) => (
-              <div key={i} className="p-6 bg-white border rounded-md">
-                <div className="text-primary text-sm font-semibold mb-2">0{i + 1}</div>
-                <h4 className="font-semibold text-udm-navy mb-1">{v.title}</h4>
-                <p className="text-sm text-udm-gray">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section padding="xl">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-udm-navy mb-4">Fantastic Team</h2>
-          <p className="text-udm-gray leading-relaxed">
-            Every project we have completed so far came to us with a set of challenges, including seemingly impossible
-            deadlines. Each time, our teams have risen to the challenge, and gone above and beyond their call of duty to
-            deliver results that not just met but exceeded client expectations. The team's USP is their cusp of creativity
-            and problem solving abilities, which help identify potential roadblocks and find creative solutions for them.
-          </p>
-        </div>
-      </Section>
-
-      <Section background="navy" padding="xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold text-white mb-3">This is why we love what we do</h2>
-          <p className="text-white/70">Kind words from our clients</p>
+          <h2 className="text-4xl md:text-5xl font-semibold">Our values.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-md p-6">
-              <p className="text-white/85 text-sm leading-relaxed mb-5 italic">"{t.quote}"</p>
-              <div>
-                <div className="font-semibold text-white">{t.name}</div>
-                <div className="text-xs text-white/60 mt-1">{t.role}</div>
-              </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          {values.map((v, i) => (
+            <div key={i} className="bg-background rounded-2xl p-6">
+              <div className="text-primary text-xs font-semibold tracking-widest mb-3">0{i + 1}</div>
+              <h4 className="font-semibold mb-1">{v.title}</h4>
+              <p className="text-sm text-muted-foreground">{v.desc}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section padding="lg" className="text-center">
-        <p className="text-udm-gray mb-6">
-          Email Us: <a href="mailto:contact@udmglobal.com" className="text-primary font-medium">contact@udmglobal.com</a>
-          {"  or  "}
-          Call us @ <a href="tel:+918043009165" className="text-primary font-medium">+91 80-43009165</a>
-        </p>
-        <Link to="/contact"><Button size="lg">Get In Touch</Button></Link>
+      {/* Case study */}
+      <Section background="navy" padding="xl">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">Case Study</p>
+          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight">
+            UDM × Difuze.
+          </h2>
+          <p className="text-white/70 text-lg leading-relaxed mb-8 font-light">
+            UDM partnered with Difuze to support the cloud transformation and architectural modernization of their
+            core platforms — DifuzeGo and DifuzeDub — products designed to streamline content workflows and media
+            operations at scale.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+              <h4 className="text-white font-semibold mb-2">Challenge</h4>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Difuze needed scalable, resilient infrastructure to support growing workloads, evolving feature demands,
+                and improved operational efficiency.
+              </p>
+            </div>
+            <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+              <h4 className="text-white font-semibold mb-2">Approach</h4>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Cloud migration with minimal disruption, re-architecting for cloud-native efficiency, and optimizing
+                infrastructure design and deployment workflows.
+              </p>
+            </div>
+          </div>
+
+          <h4 className="text-white font-semibold mb-4">Business Outcomes</h4>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {outcomes.map((o, i) => (
+              <li key={i} className="flex gap-2 text-white/85 text-sm">
+                <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" /> {o}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      <Section padding="xl" className="text-center">
+        <h2 className="text-4xl md:text-5xl font-semibold mb-6">Let's talk.</h2>
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-6 py-3 rounded-full text-[15px] font-medium hover:bg-primary/90"
+        >
+          Contact us <ArrowRight className="h-4 w-4" />
+        </Link>
       </Section>
 
       <Footer />
