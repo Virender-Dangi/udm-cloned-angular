@@ -2,120 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Apple-inspired minimal design system with UDM orange accent.
+   All colors MUST be HSL. */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 28% 17%;
+    --foreground: 0 0% 6%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
+    --card-foreground: 0 0% 6%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
+    --popover-foreground: 0 0% 6%;
 
-    --primary: 16 78% 48%;
+    --primary: 13 94% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 25% 96%;
-    --secondary-foreground: 215 28% 17%;
+    --secondary: 240 6% 96%;
+    --secondary-foreground: 0 0% 6%;
 
-    --muted: 215 20% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 240 6% 96%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 215 40% 25%;
+    --accent: 0 0% 6%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 90%;
-    --input: 215 20% 88%;
-    --ring: 16 78% 48%;
+    --border: 240 5% 90%;
+    --input: 240 5% 88%;
+    --ring: 13 94% 58%;
 
-    --radius: 0.375rem;
+    --radius: 1rem;
 
-    /* UDM Global — sober professional palette */
-    --udm-orange: 16 78% 48%;
-    --udm-orange-light: 16 65% 96%;
-    --udm-navy: 215 40% 15%;
-    --udm-navy-light: 215 32% 22%;
-    --udm-gray: 215 15% 45%;
-    --udm-gray-light: 215 20% 96%;
+    /* UDM brand tokens — Apple-inspired minimal */
+    --udm-orange: 13 94% 58%;
+    --udm-orange-light: 13 100% 96%;
+    --udm-navy: 0 0% 6%;
+    --udm-navy-light: 0 0% 12%;
+    --udm-gray: 0 0% 40%;
+    --udm-gray-light: 240 6% 96%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--udm-navy)) 0%, hsl(var(--udm-navy-light)) 100%);
-    --gradient-orange: linear-gradient(135deg, hsl(var(--udm-orange)) 0%, hsl(16 78% 42%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(240 6% 96%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(13 94% 58%) 0%, hsl(13 94% 50%) 100%);
 
-    /* Shadows — subtle and refined */
-    --shadow-elegant: 0 4px 20px -6px hsl(var(--udm-navy) / 0.08);
-    --shadow-card: 0 2px 10px -2px hsl(var(--udm-navy) / 0.06);
-    --shadow-orange: 0 4px 14px -4px hsl(var(--udm-orange) / 0.25);
+    /* Shadows — soft and refined */
+    --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.08);
+    --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.04), 0 8px 24px -8px hsl(0 0% 0% / 0.06);
+    --shadow-orange: 0 8px 24px -8px hsl(13 94% 58% / 0.35);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 220 30% 15%;
-    --foreground: 0 0% 100%;
-
-    --card: 220 25% 18%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 220 25% 18%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 22 100% 52%;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 13 94% 58%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 220 20% 25%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 220 20% 25%;
-    --muted-foreground: 220 10% 70%;
-
-    --accent: 214 100% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 98%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 0 62.8% 40%;
     --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 13 94% 58%;
 
-    --border: 220 20% 25%;
-    --input: 220 20% 25%;
-    --ring: 22 100% 52%;
-    
-    /* Dark mode UDM tokens */
-    --udm-orange: 22 100% 52%;
-    --udm-orange-light: 22 100% 8%;
-    --udm-navy: 220 30% 15%;
-    --udm-navy-light: 220 25% 18%;
-    --udm-gray: 220 10% 70%;
-    --udm-gray-light: 220 20% 25%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --udm-orange: 13 94% 58%;
+    --udm-orange-light: 13 40% 14%;
+    --udm-navy: 0 0% 6%;
+    --udm-navy-light: 0 0% 10%;
+    --udm-gray: 0 0% 65%;
+    --udm-gray-light: 0 0% 12%;
   }
 }
 
@@ -124,7 +99,21 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+      "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-feature-settings: "kern", "liga", "calt";
+    letter-spacing: -0.011em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.03em;
   }
 }

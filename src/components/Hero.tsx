@@ -1,35 +1,39 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-team.jpg";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="UDM Global Team Collaboration"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-udm-navy/80"></div>
-      </div>
-
-      <div className="relative z-10 text-center text-white px-4 animate-fade-in max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-semibold mb-6 leading-tight tracking-tight">
-          In it for the long haul.
-        </h1>
-        <p className="text-lg md:text-xl mb-10 text-white/85 max-w-2xl mx-auto leading-relaxed font-light">
-          We want to build a relationship, not just a customer base.
+    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-background">
+      <div className="max-w-5xl mx-auto px-6 text-center">
+        <p className="text-sm font-medium text-primary mb-5 tracking-wide">
+          UDM Global Solution
         </p>
-        <Link to="/about">
-          <Button
-            size="lg"
-            variant="outline"
-            className="bg-transparent border border-white/70 text-white hover:bg-white hover:text-udm-navy font-medium px-8"
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-foreground leading-[1.05] mb-6">
+          In it for the
+          <br />
+          <span className="bg-gradient-to-r from-primary to-[hsl(13_94%_48%)] bg-clip-text text-transparent">
+            long haul.
+          </span>
+        </h1>
+        <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light">
+          Stable, scalable, maintainable software — built with ownership,
+          delivered with discipline.
+        </p>
+        <div className="flex items-center justify-center gap-4 flex-wrap">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-6 py-3 rounded-full text-[15px] font-medium hover:bg-primary/90 transition-colors"
           >
-            Learn More
-          </Button>
-        </Link>
+            Explore services
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-1.5 text-primary px-6 py-3 text-[15px] font-medium hover:underline"
+          >
+            Learn more <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
