@@ -1,45 +1,43 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/udm-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
-    { name: "HOME", href: "/" },
-    { name: "SERVICES", href: "/services" },
-    { name: "ABOUT US", href: "/about" },
-    { name: "LIFE @ UDM GLOBAL", href: "/life" },
-    { name: "CAREERS", href: "/careers" },
-    { name: "CONTACT US", href: "/contact" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
+    { name: "Life @ UDM", href: "/life" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-semibold tracking-tight">
-              <span className="text-primary">UDM</span>
-              <span className="text-udm-navy"> Global Solution</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/60">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center justify-between h-14">
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="UDM Global" className="h-7 w-auto" />
+            <span className="text-[13px] font-medium text-foreground/80 hidden sm:inline">
+              Global Solution
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-[13px] font-normal transition-colors",
                   location.pathname === item.href
                     ? "text-primary"
-                    : "text-udm-navy"
+                    : "text-foreground/80 hover:text-foreground"
                 )}
               >
                 {item.name}
@@ -47,34 +45,27 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="lg:hidden"
+          <button
+            className="lg:hidden p-2 -mr-2"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            {isOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden py-3 border-t border-border/60">
+            <div className="flex flex-col">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary px-4 py-2",
+                    "text-sm py-3 px-2 transition-colors",
                     location.pathname === item.href
-                      ? "text-primary bg-udm-orange-light"
-                      : "text-udm-navy"
+                      ? "text-primary"
+                      : "text-foreground/80"
                   )}
                   onClick={() => setIsOpen(false)}
                 >

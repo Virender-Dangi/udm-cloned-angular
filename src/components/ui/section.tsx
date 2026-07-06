@@ -9,39 +9,33 @@ interface SectionProps {
   id?: string;
 }
 
-const Section = ({ 
-  children, 
-  className, 
-  background = "white", 
+const Section = ({
+  children,
+  className,
+  background = "white",
   padding = "lg",
-  id
+  id,
 }: SectionProps) => {
   const backgroundClasses = {
     white: "bg-background",
-    gray: "bg-udm-gray-light",
-    navy: "bg-udm-navy text-white",
-    gradient: "bg-gradient-to-br from-udm-navy to-udm-navy-light text-white",
+    gray: "bg-secondary",
+    navy: "bg-[hsl(0_0%_6%)] text-white",
+    gradient: "bg-gradient-to-b from-background to-secondary",
   };
 
   const paddingClasses = {
-    sm: "py-8",
+    sm: "py-10",
     md: "py-16",
-    lg: "py-20",
-    xl: "py-32",
+    lg: "py-20 md:py-24",
+    xl: "py-24 md:py-32",
   };
 
   return (
-    <section 
+    <section
       id={id}
-      className={cn(
-        backgroundClasses[background],
-        paddingClasses[padding],
-        className
-      )}
+      className={cn(backgroundClasses[background], paddingClasses[padding], className)}
     >
-      <div className="container mx-auto px-4">
-        {children}
-      </div>
+      <div className="max-w-6xl mx-auto px-6">{children}</div>
     </section>
   );
 };

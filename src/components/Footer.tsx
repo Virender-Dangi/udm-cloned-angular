@@ -1,69 +1,63 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/udm-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-udm-navy text-white">
-      <div className="container mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
-            <h3 className="text-xl font-semibold mb-4 tracking-tight">
-              <span className="text-primary">UDM</span> Global Solution
-            </h3>
-            <p className="text-white/70 text-sm mb-6 leading-relaxed">
-              An Information Technology company based out of Bangalore, India. Founded in April 2017.
+    <footer className="bg-secondary text-foreground border-t border-border">
+      <div className="max-w-6xl mx-auto px-6 py-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-[13px]">
+          <div className="col-span-2 md:col-span-1">
+            <img src={logo} alt="UDM Global" className="h-8 w-auto mb-4" />
+            <p className="text-muted-foreground leading-relaxed">
+              An Information Technology company based in Bengaluru, India.
+              Founded in April 2017.
             </p>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-white/80">#1282, 17th Cross, 5th Main, Sector 7, HSR Layout, Bangalore - 560102</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-primary" />
-                <span className="text-white/80">+91 80-43009165</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-primary" />
-                <span className="text-white/80">contact@udmglobal.com</span>
-              </div>
-            </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-4 uppercase tracking-wider text-white/90">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/services" className="text-white/70 hover:text-primary transition-colors">Development</Link></li>
-              <li><Link to="/services" className="text-white/70 hover:text-primary transition-colors">UI Development</Link></li>
-              <li><Link to="/services" className="text-white/70 hover:text-primary transition-colors">Testing</Link></li>
-              <li><Link to="/services" className="text-white/70 hover:text-primary transition-colors">Recruitment Process Outsourcing</Link></li>
-              <li><Link to="/services" className="text-white/70 hover:text-primary transition-colors">Maintenance</Link></li>
+            <h4 className="font-semibold mb-3 text-foreground">Services</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li><Link to="/services" className="hover:text-primary">Application Development</Link></li>
+              <li><Link to="/services" className="hover:text-primary">Cloud & Infrastructure</Link></li>
+              <li><Link to="/services" className="hover:text-primary">Data Engineering</Link></li>
+              <li><Link to="/services" className="hover:text-primary">Quality Assurance</Link></li>
+              <li><Link to="/services" className="hover:text-primary">AI-Assisted Workflows</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-4 uppercase tracking-wider text-white/90">Company</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/about" className="text-white/70 hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/careers" className="text-white/70 hover:text-primary transition-colors">Careers</Link></li>
-              <li><Link to="/life" className="text-white/70 hover:text-primary transition-colors">Life @ UDM Global</Link></li>
-              <li><Link to="/contact" className="text-white/70 hover:text-primary transition-colors">Contact Us</Link></li>
+            <h4 className="font-semibold mb-3 text-foreground">Company</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li><Link to="/about" className="hover:text-primary">About</Link></li>
+              <li><Link to="/careers" className="hover:text-primary">Careers</Link></li>
+              <li><Link to="/life" className="hover:text-primary">Life @ UDM</Link></li>
+              <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-4 uppercase tracking-wider text-white/90">Working Hours</h4>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li>Monday – Friday: 9am to 6pm</li>
-              <li>Saturday: Closed</li>
-              <li>Sunday: Closed</li>
+            <h4 className="font-semibold mb-3 text-foreground">Contact</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>
+                1st Floor, Vajram Esteva,<br />
+                New Survey No. 57/4, Old Survey No. 57/2,<br />
+                Marathahalli–Sarjapur Outer Ring Road (ORR),<br />
+                Varthur, Devarabisanahalli,<br />
+                Bengaluru, Karnataka 560103
+              </li>
+              <li>
+                <a href="tel:+917338559996" className="hover:text-primary">+91 73385 59996</a>
+              </li>
+              <li>
+                <a href="mailto:contact@udmglobal.com" className="hover:text-primary">contact@udmglobal.com</a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-6 text-center">
-          <p className="text-white/50 text-xs">
-            © {new Date().getFullYear()} UDM Global Solution Pvt. Ltd. All rights reserved.
-          </p>
+        <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-muted-foreground">
+          <p>Copyright © {new Date().getFullYear()} UDM Global Solution Pvt. Ltd. All rights reserved.</p>
+          <p>Mon–Fri, 9am to 6pm IST</p>
         </div>
       </div>
     </footer>
