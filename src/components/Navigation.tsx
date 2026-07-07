@@ -18,23 +18,25 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/60">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/60">
+      <nav aria-label="Primary" className="w-full">
+
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-14">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="UDM Global" className="h-7 w-auto" />
+          <Link to="/" className="flex items-center gap-2 min-h-[48px]" aria-label="UDM Global Solution — Home">
+            <img src={logo} alt="UDM Global Solution logo" width="120" height="28" className="h-7 w-auto" />
             <span className="text-[13px] font-medium text-foreground/80 hidden sm:inline">
               Global Solution
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "text-[13px] font-normal transition-colors",
+                  "text-[13px] font-normal transition-colors px-3 min-h-[48px] inline-flex items-center rounded-md",
                   location.pathname === item.href
                     ? "text-primary"
                     : "text-foreground/80 hover:text-foreground"
@@ -46,7 +48,7 @@ const Navigation = () => {
           </div>
 
           <button
-            className="lg:hidden p-2 -mr-2"
+            className="lg:hidden inline-flex items-center justify-center w-12 h-12 -mr-2"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -55,14 +57,14 @@ const Navigation = () => {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden py-3 border-t border-border/60">
+          <div className="lg:hidden py-2 border-t border-border/60">
             <div className="flex flex-col">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   className={cn(
-                    "text-sm py-3 px-2 transition-colors",
+                    "text-base min-h-[48px] flex items-center px-2 transition-colors",
                     location.pathname === item.href
                       ? "text-primary"
                       : "text-foreground/80"
@@ -76,7 +78,8 @@ const Navigation = () => {
           </div>
         )}
       </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
