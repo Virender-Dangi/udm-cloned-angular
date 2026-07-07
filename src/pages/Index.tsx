@@ -1,7 +1,9 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Section from "@/components/ui/section";
 import Footer from "@/components/Footer";
+import HappyClients from "@/components/HappyClients";
 import { Link } from "react-router-dom";
 import { ArrowRight, Cloud, Code2, Database, Shield, Sparkles, LineChart } from "lucide-react";
 
@@ -20,22 +22,40 @@ const Index = () => {
       quote:
         "UDM has been providing Managed Services on the AWS Cloud platform for more than a year. They have proactively solved issues impacting the business and handled continuous releases without downtime.",
       name: "Praveen Krishnaiah",
-      role: "Founder, Handpick 3d Solution Pvt Ltd",
+      role: "Founder, Handpick 3D Solution Pvt Ltd",
     },
     {
       quote:
         "We are very satisfied with our relationship with UDM Global. They are professionals, hard workers and they help us achieve every new idea we come up with for our product.",
       name: "Rouette Jean-Sebastien",
-      role: "Manager, Technicolor Montreal Canada",
+      role: "Manager, Technicolor Montreal, Canada",
+    },
+    {
+      quote:
+        "The UDM team has been a reliable engineering partner. Their attention to quality, ownership and communication makes them feel like an extension of our own team.",
+      name: "Product Leadership",
+      role: "Engagedly",
+    },
+    {
+      quote:
+        "From cloud migration to architectural modernization, UDM helped us scale our core platforms with minimal disruption and a clear long-term roadmap.",
+      name: "Engineering Team",
+      role: "Difuze",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>UDM Global Solution — Stable, scalable software, built with ownership</title>
+        <meta name="description" content="UDM Global Solution builds stable, scalable, maintainable software with proven cloud, data and AI-assisted capabilities. Based in Bengaluru, India." />
+        <link rel="canonical" href="https://udm-cloned-angular.lovable.app/" />
+        <meta property="og:url" content="https://udm-cloned-angular.lovable.app/" />
+      </Helmet>
       <Navigation />
       <Hero />
 
-      {/* Feature banner — Apple product-tile style */}
+      {/* Feature banner */}
       <Section padding="sm" background="gray">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-background rounded-3xl p-10 md:p-14 text-center shadow-[var(--shadow-card)]">
@@ -44,7 +64,7 @@ const Index = () => {
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
               Cloud transformation and architectural modernization for DifuzeGo and DifuzeDub.
             </p>
-            <Link to="/about" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:underline">
+            <Link to="/about" className="inline-flex items-center gap-1 min-h-[48px] text-primary text-sm font-medium hover:underline">
               Read the story <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -54,7 +74,7 @@ const Index = () => {
             <p className="text-white/70 mb-6 max-w-md mx-auto">
               Join a team that treats engineering as craft. Attrition rate: 1%.
             </p>
-            <Link to="/careers" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:underline">
+            <Link to="/careers" className="inline-flex items-center gap-1 min-h-[48px] text-primary text-sm font-medium hover:underline">
               See open roles <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -108,18 +128,42 @@ const Index = () => {
           <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-3">Kind Words</p>
           <h2 className="text-4xl md:text-5xl font-semibold">This is why we love what we do.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+
+        {/* Mobile: horizontal snap-scroll. Desktop: grid. */}
+        <div className="md:hidden -mx-6 px-6 overflow-x-auto snap-x snap-mandatory flex gap-4 pb-4">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-background rounded-2xl p-8 shadow-[var(--shadow-card)]">
-              <p className="text-foreground leading-relaxed mb-6 text-lg font-light">"{t.quote}"</p>
-              <div className="text-sm">
+            <figure
+              key={i}
+              className="snap-center shrink-0 w-[85%] bg-background rounded-2xl p-7 shadow-[var(--shadow-card)]"
+            >
+              <blockquote className="text-foreground leading-relaxed mb-5 text-base font-light">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="text-sm">
                 <div className="font-semibold">{t.name}</div>
                 <div className="text-muted-foreground mt-0.5">{t.role}</div>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          {testimonials.map((t, i) => (
+            <figure key={i} className="bg-background rounded-2xl p-8 shadow-[var(--shadow-card)]">
+              <blockquote className="text-foreground leading-relaxed mb-6 text-lg font-light">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="text-sm">
+                <div className="font-semibold">{t.name}</div>
+                <div className="text-muted-foreground mt-0.5">{t.role}</div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </Section>
+
+      {/* Happy Clients */}
+      <HappyClients />
 
       {/* CTA */}
       <Section padding="xl" className="text-center">
@@ -131,14 +175,14 @@ const Index = () => {
         </p>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-6 py-3 rounded-full text-[15px] font-medium hover:bg-primary/90"
+          className="inline-flex items-center justify-center gap-1.5 bg-primary text-primary-foreground px-7 min-h-[48px] rounded-full text-[15px] font-medium hover:bg-primary/90"
         >
           Get in touch <ArrowRight className="h-4 w-4" />
         </Link>
       </Section>
 
       <Footer />
-    </div>
+    </main>
   );
 };
 

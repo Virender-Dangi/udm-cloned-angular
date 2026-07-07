@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-[13px]">
           <div className="col-span-2 md:col-span-1">
-            <img src={logo} alt="UDM Global" className="h-8 w-auto mb-4" />
+            <img src={logo} alt="UDM Global Solution logo" width="140" height="32" loading="lazy" decoding="async" className="h-8 w-auto mb-4" />
             <p className="text-muted-foreground leading-relaxed">
               An Information Technology company based in Bengaluru, India.
               Founded in April 2017.

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Section from "@/components/ui/section";
 import Footer from "@/components/Footer";
@@ -26,7 +27,14 @@ const Life = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Life @ UDM — People, purpose and passion</title>
+        <meta name="description" content="Life at UDM Global Solution: fantastic teams, social contribution and amazing benefits. Attrition rate: 1%." />
+        <link rel="canonical" href="https://udm-cloned-angular.lovable.app/life" />
+        <meta property="og:url" content="https://udm-cloned-angular.lovable.app/life" />
+        <meta property="og:title" content="Life @ UDM Global Solution" />
+      </Helmet>
       <Navigation />
 
       <Section padding="xl" className="pt-32 text-center">
@@ -61,7 +69,7 @@ const Life = () => {
       </Section>
 
       <Footer />
-    </div>
+    </main>
   );
 };
 

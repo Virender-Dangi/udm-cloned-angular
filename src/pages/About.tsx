@@ -1,6 +1,8 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Section from "@/components/ui/section";
 import Footer from "@/components/Footer";
+import HappyClients from "@/components/HappyClients";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -24,7 +26,14 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>About UDM Global Solution — In it for the long haul</title>
+        <meta name="description" content="UDM Global Solution is a Bengaluru-based IT company founded in April 2017. Meet our team, values and mission." />
+        <link rel="canonical" href="https://udm-cloned-angular.lovable.app/about" />
+        <meta property="og:url" content="https://udm-cloned-angular.lovable.app/about" />
+        <meta property="og:title" content="About UDM Global Solution" />
+      </Helmet>
       <Navigation />
 
       <Section padding="xl" className="pt-32 text-center">
@@ -136,8 +145,9 @@ const About = () => {
         </Link>
       </Section>
 
+      <HappyClients />
       <Footer />
-    </div>
+    </main>
   );
 };
 
