@@ -145,8 +145,9 @@ const About = () => {
         </Link>
       </Section>
 
+      <HappyClients />
       <Footer />
-    </div>
+    </main>
   );
 };
 

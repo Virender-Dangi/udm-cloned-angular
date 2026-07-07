@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Section from "@/components/ui/section";
 import Footer from "@/components/Footer";
@@ -61,7 +62,14 @@ const stack = {
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Services — Application, Cloud, Data & AI | UDM Global Solution</title>
+        <meta name="description" content="Application development, cloud & infrastructure, data engineering, security, AI-assisted workflows and QA — delivered by UDM Global Solution." />
+        <link rel="canonical" href="https://udm-cloned-angular.lovable.app/services" />
+        <meta property="og:url" content="https://udm-cloned-angular.lovable.app/services" />
+        <meta property="og:title" content="UDM Global Solution — Services" />
+      </Helmet>
       <Navigation />
 
       <Section padding="xl" className="pt-32 text-center">
@@ -195,7 +203,7 @@ const Services = () => {
       </Section>
 
       <Footer />
-    </div>
+    </main>
   );
 };
 

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Section from "@/components/ui/section";
 import Footer from "@/components/Footer";
@@ -40,7 +41,14 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact UDM Global Solution — Bengaluru, India</title>
+        <meta name="description" content="Get in touch with UDM Global Solution. Call +91 73385 59996 or email contact@udmglobal.com. Office in Devarabisanahalli, Bengaluru." />
+        <link rel="canonical" href="https://udm-cloned-angular.lovable.app/contact" />
+        <meta property="og:url" content="https://udm-cloned-angular.lovable.app/contact" />
+        <meta property="og:title" content="Contact UDM Global Solution" />
+      </Helmet>
       <Navigation />
 
       <Section padding="xl" className="pt-32 text-center">
@@ -121,7 +129,7 @@ const Contact = () => {
       </Section>
 
       <Footer />
-    </div>
+    </main>
   );
 };
 
