@@ -26,7 +26,14 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>About UDM Global Solution — In it for the long haul</title>
+        <meta name="description" content="UDM Global Solution is a Bengaluru-based IT company founded in April 2017. Meet our team, values and mission." />
+        <link rel="canonical" href="https://udm-cloned-angular.lovable.app/about" />
+        <meta property="og:url" content="https://udm-cloned-angular.lovable.app/about" />
+        <meta property="og:title" content="About UDM Global Solution" />
+      </Helmet>
       <Navigation />
 
       <Section padding="xl" className="pt-32 text-center">
