@@ -39,9 +39,10 @@ const About = () => {
       <Section padding="xl" className="pt-32 text-center">
         <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">About</p>
         <h1 className="text-5xl md:text-7xl font-semibold leading-[1.05] mb-6">
-          We're in it for
-          <br />
-          <span className="text-muted-foreground">the long haul.</span>
+          <span className="sr-only">About UDM Global Solution. </span>
+          <span aria-hidden="true">We're in it for<br />
+            <span className="text-muted-foreground">the long haul.</span>
+          </span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light">
           An Information Technology company based in Bengaluru, India. Founded April 2017.
@@ -62,6 +63,7 @@ const About = () => {
       </Section>
 
       <Section padding="xl">
+        <h2 className="sr-only">Mission and Vision</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
           <div className="bg-secondary rounded-3xl p-10">
             <h3 className="text-2xl font-semibold mb-3">Our Mission</h3>
@@ -109,14 +111,14 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-              <h4 className="text-white font-semibold mb-2">Challenge</h4>
+              <h3 className="text-white font-semibold mb-2">Challenge</h3>
               <p className="text-white/70 text-sm leading-relaxed">
                 Difuze needed scalable, resilient infrastructure to support growing workloads, evolving feature demands,
                 and improved operational efficiency.
               </p>
             </div>
             <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-              <h4 className="text-white font-semibold mb-2">Approach</h4>
+              <h3 className="text-white font-semibold mb-2">Approach</h3>
               <p className="text-white/70 text-sm leading-relaxed">
                 Cloud migration with minimal disruption, re-architecting for cloud-native efficiency, and optimizing
                 infrastructure design and deployment workflows.
@@ -124,7 +126,7 @@ const About = () => {
             </div>
           </div>
 
-          <h4 className="text-white font-semibold mb-4">Business Outcomes</h4>
+          <h3 className="text-white font-semibold mb-4">Business Outcomes</h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {outcomes.map((o, i) => (
               <li key={i} className="flex gap-2 text-white/85 text-sm">

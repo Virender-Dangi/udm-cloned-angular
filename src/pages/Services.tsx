@@ -75,9 +75,10 @@ const Services = () => {
       <Section padding="xl" className="pt-32 text-center">
         <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">Technology & Capabilities</p>
         <h1 className="text-5xl md:text-7xl font-semibold leading-[1.05] mb-5">
-          Built for real-world systems.
-          <br />
-          <span className="text-muted-foreground">Delivered with ownership.</span>
+          <span className="sr-only">UDM Global Solution Services — Application Development, Cloud &amp; Data Engineering. </span>
+          <span aria-hidden="true">Built for real-world systems.<br />
+            <span className="text-muted-foreground">Delivered with ownership.</span>
+          </span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light">
           Technology is a means to an outcome — not the outcome itself. We focus on
@@ -86,6 +87,7 @@ const Services = () => {
       </Section>
 
       <Section background="gray" padding="xl">
+        <h2 className="sr-only">Capabilities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {capabilityGroups.map((g, i) => (
             <div key={i} className="bg-background rounded-3xl p-10 shadow-[var(--shadow-card)]">

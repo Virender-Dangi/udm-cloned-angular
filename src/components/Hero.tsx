@@ -9,10 +9,11 @@ const Hero = () => {
           UDM Global Solution
         </p>
         <h1 id="hero-heading" className="text-5xl md:text-7xl lg:text-8xl font-semibold text-foreground leading-[1.05] mb-6">
-          In it for the
-          <br />
-          <span className="bg-gradient-to-r from-primary to-[hsl(13_94%_48%)] bg-clip-text text-transparent">
-            long haul.
+          <span className="sr-only">UDM Global Solution — Software Engineering &amp; Cloud Modernization. </span>
+          <span aria-hidden="true">In it for the<br />
+            <span className="bg-gradient-to-r from-primary to-[hsl(13_94%_48%)] bg-clip-text text-transparent">
+              long haul.
+            </span>
           </span>
         </h1>
         <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light">
@@ -31,7 +32,7 @@ const Hero = () => {
             to="/about"
             className="inline-flex items-center justify-center gap-1.5 text-primary px-7 min-h-[48px] text-[15px] font-medium hover:underline"
           >
-            Learn more <ArrowRight className="h-4 w-4" />
+            About UDM Global <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>
