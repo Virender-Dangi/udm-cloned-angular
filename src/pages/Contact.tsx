@@ -48,6 +48,29 @@ const Contact = () => {
         <link rel="canonical" href="https://udm-cloned-angular.lovable.app/contact" />
         <meta property="og:url" content="https://udm-cloned-angular.lovable.app/contact" />
         <meta property="og:title" content="Contact UDM Global Solution" />
+        <meta property="og:description" content="Reach UDM Global Solution's Bengaluru office by phone or email." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "UDM Global Solution Pvt. Ltd.",
+          "url": "https://udm-cloned-angular.lovable.app/contact",
+          "telephone": "+91 73385 59996",
+          "email": "contact@udmglobal.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1st Floor, Vajram Esteva, New Survey No. 57/4, Old Survey No. 57/2, Marathahalli-Sarjapur Outer Ring Road, ORR, Varthur, Devarabisanahalli",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "postalCode": "560103",
+            "addressCountry": "IN"
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }]
+        })}</script>
       </Helmet>
       <Navigation />
 

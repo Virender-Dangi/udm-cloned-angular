@@ -29,11 +29,12 @@ const Life = () => {
   return (
     <main className="min-h-screen bg-background">
       <Helmet>
-        <title>Life @ UDM — People, purpose and passion</title>
+        <title>Life at UDM Global Solution — People & Culture</title>
         <meta name="description" content="Life at UDM Global Solution: fantastic teams, social contribution and amazing benefits. Attrition rate: 1%." />
         <link rel="canonical" href="https://udm-cloned-angular.lovable.app/life" />
         <meta property="og:url" content="https://udm-cloned-angular.lovable.app/life" />
-        <meta property="og:title" content="Life @ UDM Global Solution" />
+        <meta property="og:title" content="Life at UDM Global Solution" />
+        <meta property="og:description" content="People, purpose and passion — a look inside UDM Global Solution." />
       </Helmet>
       <Navigation />
 

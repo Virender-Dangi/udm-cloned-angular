@@ -64,11 +64,19 @@ const Services = () => {
   return (
     <main className="min-h-screen bg-background">
       <Helmet>
-        <title>Services — Application, Cloud, Data & AI | UDM Global Solution</title>
+        <title>Services — Application, Cloud, Data & AI | UDM Global</title>
         <meta name="description" content="Application development, cloud & infrastructure, data engineering, security, AI-assisted workflows and QA — delivered by UDM Global Solution." />
         <link rel="canonical" href="https://udm-cloned-angular.lovable.app/services" />
         <meta property="og:url" content="https://udm-cloned-angular.lovable.app/services" />
         <meta property="og:title" content="UDM Global Solution — Services" />
+        <meta property="og:description" content="Application development, cloud, data, security, AI and QA services." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "provider": { "@type": "Organization", "name": "UDM Global Solution Pvt. Ltd." },
+          "areaServed": "Global",
+          "serviceType": ["Application Development","Cloud & Infrastructure","Data Engineering","Security & Access Control","AI-Assisted Capabilities","Quality Assurance"]
+        })}</script>
       </Helmet>
       <Navigation />
 
