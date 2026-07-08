@@ -64,20 +64,29 @@ const Services = () => {
   return (
     <main className="min-h-screen bg-background">
       <Helmet>
-        <title>Services — Application, Cloud, Data & AI | UDM Global Solution</title>
+        <title>Services — Application, Cloud, Data & AI | UDM Global</title>
         <meta name="description" content="Application development, cloud & infrastructure, data engineering, security, AI-assisted workflows and QA — delivered by UDM Global Solution." />
         <link rel="canonical" href="https://udm-cloned-angular.lovable.app/services" />
         <meta property="og:url" content="https://udm-cloned-angular.lovable.app/services" />
         <meta property="og:title" content="UDM Global Solution — Services" />
+        <meta property="og:description" content="Application development, cloud, data, security, AI and QA services." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "provider": { "@type": "Organization", "name": "UDM Global Solution Pvt. Ltd." },
+          "areaServed": "Global",
+          "serviceType": ["Application Development","Cloud & Infrastructure","Data Engineering","Security & Access Control","AI-Assisted Capabilities","Quality Assurance"]
+        })}</script>
       </Helmet>
       <Navigation />
 
       <Section padding="xl" className="pt-32 text-center">
         <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">Technology & Capabilities</p>
         <h1 className="text-5xl md:text-7xl font-semibold leading-[1.05] mb-5">
-          Built for real-world systems.
-          <br />
-          <span className="text-muted-foreground">Delivered with ownership.</span>
+          <span className="sr-only">UDM Global Solution Services — Application Development, Cloud &amp; Data Engineering. </span>
+          <span aria-hidden="true">Built for real-world systems.<br />
+            <span className="text-muted-foreground">Delivered with ownership.</span>
+          </span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light">
           Technology is a means to an outcome — not the outcome itself. We focus on
@@ -86,6 +95,7 @@ const Services = () => {
       </Section>
 
       <Section background="gray" padding="xl">
+        <h2 className="sr-only">Capabilities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {capabilityGroups.map((g, i) => (
             <div key={i} className="bg-background rounded-3xl p-10 shadow-[var(--shadow-card)]">

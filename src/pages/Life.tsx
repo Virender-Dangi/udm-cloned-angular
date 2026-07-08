@@ -29,11 +29,12 @@ const Life = () => {
   return (
     <main className="min-h-screen bg-background">
       <Helmet>
-        <title>Life @ UDM — People, purpose and passion</title>
+        <title>Life at UDM Global Solution — People & Culture</title>
         <meta name="description" content="Life at UDM Global Solution: fantastic teams, social contribution and amazing benefits. Attrition rate: 1%." />
         <link rel="canonical" href="https://udm-cloned-angular.lovable.app/life" />
         <meta property="og:url" content="https://udm-cloned-angular.lovable.app/life" />
-        <meta property="og:title" content="Life @ UDM Global Solution" />
+        <meta property="og:title" content="Life at UDM Global Solution" />
+        <meta property="og:description" content="People, purpose and passion — a look inside UDM Global Solution." />
       </Helmet>
       <Navigation />
 
@@ -47,6 +48,7 @@ const Life = () => {
       </Section>
 
       <Section background="gray" padding="xl">
+        <h2 className="sr-only">What life at UDM looks like</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {highlights.map((h, i) => (
             <div key={i} className="bg-background rounded-3xl p-8">

@@ -19,11 +19,12 @@ const Careers = () => {
   return (
     <main className="min-h-screen bg-background">
       <Helmet>
-        <title>Careers at UDM Global Solution — Build with us</title>
+        <title>Careers at UDM Global Solution — Openings in Bengaluru</title>
         <meta name="description" content="Explore current openings at UDM Global Solution in Bengaluru. Sales & Marketing Internship available now." />
         <link rel="canonical" href="https://udm-cloned-angular.lovable.app/careers" />
         <meta property="og:url" content="https://udm-cloned-angular.lovable.app/careers" />
         <meta property="og:title" content="Careers at UDM Global Solution" />
+        <meta property="og:description" content="Join UDM Global Solution in Bengaluru. Current openings and internships." />
       </Helmet>
       <Navigation />
 
